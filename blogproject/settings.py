@@ -32,9 +32,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-krlwe8xjmmu.ws-eu107.gitpod.io']
-#ALLOWED_HOSTS = ['miniblog23-f66148cb72c8.herokuapp.com']
+#ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-krlwe8xjmmu.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['miniblog23-f66148cb72c8.herokuapp.com']
 
+#login/logout url
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 # Application definition
 
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'blogapp',
+    'newmembers',
 ]
 
 MIDDLEWARE = [
