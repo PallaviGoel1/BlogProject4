@@ -7,12 +7,59 @@
 
 
 <h1> {{ post.title }} </h1>
-<small>By: {{ post.author.first_name }} {{ post.author.last_name }} - {{ post.date }} </small> <br/>
+<small>By: {{ post.author.first_name }} {{ post.author.last_name }} -
+     <a href="{% url 'update_post' post.pk %} ">(Edit)</a> 
+     <a href="{% url 'delete_post' post.pk %} ">(Delete)</a>
+     {{ post.date }} </small> <br/>
 <br>
 <br/>
-{{ post.body }}
+{{ post.body | safe}}
 
-<br/><br/>
+<br>
+<br/>
+
+<div class="row">
+
+    <div class="col-1">
+        <strong>
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'like_post' post.pk %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="post_id" value="{{post.id }}" class="btn-like"><i class="fas fa-heart"></i></button>
+                {% else %}
+                <button type="submit" name="post_id" value="{{post.id }}" class="btn-like"><i class="far fa-heart"></i></button>
+                {% endif %}
+            </form>
+            {% else %}
+            <span class="text-secondary"><i class="far fa-heart"></i></span>
+            {% endif %}
+        <!-- The number of likes goes before the closing strong tag -->
+        <span class="text-secondary"> - {{ total_likes }} Likes </span>
+        </strong>
+    </div>
+    <br/>
+    <hr>
+    <h2>Comments...</h2>
+
+    {% if not post.comments.all %}
+        No Comments yet...<a href="#">Add Comments</a>
+    {% else %}
+        {% for comment in post.comments.all %}
+            <strong>   
+                {{ comment.name }} -
+                {{ comment.date }}
+            </strong> 
+            <br/>
+                {{ comment.body }}
+            <br/>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+
+</div>
+<br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 
 {% endblock %}
