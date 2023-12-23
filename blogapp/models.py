@@ -16,6 +16,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_posts',blank=True)
     status = models.IntegerField(choices=STATUS, default=True)
     #featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = models.ImageField(null=True, blank=True,upload_to="images/")
 
     def total_likes(self):
         return self.likes.count()
@@ -35,3 +36,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.post.title, self.name)
+

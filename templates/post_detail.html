@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block title %}{{ post.title }}{% endblock %}
 
 
@@ -18,6 +18,8 @@
     {% endif %}
     </small> <br/>
 <br>
+<br/>
+<img src="{{ post.featured_image.url }}">
 <br/>
 {{ post.body | safe}}
 
@@ -46,13 +48,20 @@
 
         - {{ total_likes }}
     
-</form></strong>
-    </div>
-    <h3>Comments...</h3>
-
+</form>
+   <br>
+   <br>
+   <hr>
+   <h3>Comments...</h3>
+    
     {% if not post.comments.all %}
-        No Comments yet...<a href="#">Add Comments</a>
+
+        No Comments yet... <a href="{% url 'comment' post.pk %}">Add One</a>
+
     {% else %}
+
+       
+
         {% for comment in post.comments.all %}
             <strong>   
                 {{ comment.name }} -
@@ -61,11 +70,14 @@
             <br/>
                 {{ comment.body }}
             <br/>
-            <hr>
+            <br/>
+            <a href="{% url 'comment' post.pk %}">Add Comments</a>
         {% endfor %}
     {% endif %}
+    <br/>
+   
 
-
+    <hr>
 </div>
 <br/>
 
