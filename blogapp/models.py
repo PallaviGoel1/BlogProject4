@@ -6,17 +6,17 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 # Create your models here.
 
-STATUS = ((0, "Draft"),(1, "Submit"))
+#STATUS = ((0, "Draft"),(1, "Submit"))
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug =models.SlugField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     body = models.TextField()
-    likes = models.ManyToManyField(User, related_name='blog_posts',blank=True)
-    status = models.IntegerField(choices=STATUS, default=True)
-    #featured_image = CloudinaryField('image', default='placeholder')
-    featured_image = models.ImageField(null=True, blank=True,upload_to="images/")
+    likes = models.ManyToManyField(User, blank=True)
+    #status = models.IntegerField(choices=STATUS, default=True)
+    featured_image = CloudinaryField('image', default='placeholder')
+    
 
     def total_likes(self):
         return self.likes.count()

@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-krlwe8xjmmu.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io']
 #ALLOWED_HOSTS = ['miniblog23-f66148cb72c8.herokuapp.com']
 
 #login/logout url
@@ -142,8 +142,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'Static files')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
