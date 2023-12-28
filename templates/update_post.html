@@ -8,14 +8,16 @@
     <br/>
     <div class="form-group">
         <form method="POST">
+            <button class="btn btn-primary float-end btn-primary-spacing" type="submit">UpdateBlog</button>
+            <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="btn btn-secondary">Update</button>
-            <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+            
         </form>
     </div>
 {% else %}
     You're not login 'sorry'( you know it...)
+    <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
 {% endif %}
 
 {% endblock %}

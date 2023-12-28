@@ -5,33 +5,41 @@
 
 {% block content %}
 
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle">{{ post.author }} | {{ post.date }}</p>
+            </div>
+            {% if user.is_authenticated %}
+            <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
+                <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>
 
-
-<h1> {{ post.title }} </h1>
-<small>By: {{ post.author.first_name }} {{ post.author.last_name }} -  
-    {{ post.date }}
+            {% endif %}
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                    <img src="https://www.bertelsmann-stiftung.de/fileadmin/files/_processed_/a/c/csm_Fotolia_64336912_X_Original_41023_d2446515ba.jpg" width="100%">
+                {% else %}
+                    <img src=" {{ post.featured_image.url }}" width="100%">
+                <br/>
+                {% endif %}
+                {{ post.body | safe}}
+            </div>
+        </div>
+    </div>
+</div>
+    <br>
+    <br/>
+    <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
 
     {% if user.is_authenticated %}
-       - <a href="{% url 'update_post' post.pk %} ">(Edit)</a> 
-       - <a href="{% url 'delete_post' post.pk %} ">(Delete)</a>
-
-    {% endif %}
-    </small> <br/>
-<br>
-<br/>
-<img src="{{ post.featured_image.url }}">
-<br/>
-{{ post.body | safe}}
-
-<br>
-<br/>
-<hr>
-<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-<br>
-<br/>
-<form action ="{% url 'like_post' post.pk %}" method="post">
-    {% csrf_token %}
-    {% if user.is_authenticated %}
+    <form class="d-inline" action ="{% url 'like_post' post.pk %}" method="post">
+        {% csrf_token %}
+    
         {% if liked %}
             <button type="submit", name="post_id", value="{{ post.id }}", class="fas fa-heart">
                 Unlike
@@ -41,14 +49,13 @@
                 Like
             </button>
         {% endif %}
+    </form>
     {% else %}  
     <a href="{% url 'login' %}">Login</a>
-        Please logged for Like   
+        Please logged for Like......
     {% endif %}
 
-        - {{ total_likes }}
-    
-</form>
+    <span class="text-secondary">{{ post.total_likes }} </span>
    <br>
    <br>
    <hr>

@@ -6,15 +6,14 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 # Create your models here.
 
-#STATUS = ((0, "Draft"),(1, "Submit"))
+
 class Post(models.Model):
-    title = models.CharField(max_length=255)
-    slug =models.SlugField(max_length=200)
+    title = models.CharField(max_length=255, unique=True)
+    slug =models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     body = models.TextField()
-    likes = models.ManyToManyField(User, blank=True)
-    #status = models.IntegerField(choices=STATUS, default=True)
+    likes = models.ManyToManyField(User,related_name = 'blogpost_like', blank=True)
     featured_image = CloudinaryField('image', default='placeholder')
     
 
@@ -36,4 +35,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.post.title, self.name)
+
+
+
 
