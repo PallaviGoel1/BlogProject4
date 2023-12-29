@@ -23,7 +23,7 @@ class HomeView(ListView):
     model = Post
     template_name = 'homepage.html'
     ordering = ['-date']
-    paginate_by = 4
+    paginate_by = 6
 
 class BlogDetailView(DetailView):
     model = Post
