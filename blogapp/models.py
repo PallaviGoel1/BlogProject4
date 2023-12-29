@@ -16,6 +16,8 @@ class Post(models.Model):
     likes = models.ManyToManyField(User,related_name = 'blogpost_like', blank=True)
     featured_image = CloudinaryField('image', default='placeholder')
     
+    class Meta:
+        ordering = ['-date']
 
     def total_likes(self):
         return self.likes.count()
