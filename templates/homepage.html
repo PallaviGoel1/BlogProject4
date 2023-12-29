@@ -58,17 +58,3 @@
     {% endif %}
 </div>
 {%endblock%}
-
-<!--<h1>Post</h1>
-<ul>
-{% for post in object_list  %}
-    <li><a href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a> - {{ post.author.first_name }}
-    {{ post.author.last_name }} - {{ post.date }} - {{ post.author.email}}<br/> 
-    {{ post.body | slice:"100" | safe }} - 
-        <a href="{% url 'update_post' post.pk %} ">(Edit)</a>
-        
-    </li>
-{% endfor %}
-</ul>
-
--->

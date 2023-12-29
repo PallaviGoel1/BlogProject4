@@ -8,8 +8,8 @@ from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=255, unique=True)
-    slug =models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=255,unique=True)
+    slug = models.SlugField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     body = models.TextField()
@@ -31,6 +31,10 @@ class Comment(models.Model):
     name = models.CharField(max_length=255)
     body = models.TextField()
     date = models.DateTimeField(default=timezone.now)
+   
+
+    class Meta:
+        ordering = ["date"]
    
 
     def __str__(self):

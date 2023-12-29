@@ -1,6 +1,6 @@
 body {
     background-color : #fedada;
-    /*background-image: url("/static/images/images.jpeg");*/
+    
 }
 
 footer {
@@ -8,7 +8,49 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    /*background-color: rgb(48, 42, 42);
-    color: rgb(50, 34, 34);*/
     text-align: center;
  }
+ 
+.dark-bg {
+    background-color: #3a3229;
+}
+
+.image-container {
+    position: relative;
+}
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #23BBBB;
+}
+.author {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
