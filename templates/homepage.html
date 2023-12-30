@@ -9,7 +9,8 @@
             {% for post in post_list %}
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">{{ post.title }} {{ post.category }}</h2>
+                        <h2 class="card-title">{{ post.title }} 
+                        <a href="{% url 'category' post.category %}"> {{post.category }}</a></h2>
                         <p class="card-text text-muted h6">{{ post.author }} | {{ post.date}} </p>
                         <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
                         <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>

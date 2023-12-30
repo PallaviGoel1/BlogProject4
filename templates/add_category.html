@@ -8,14 +8,13 @@
     <br/>
     
     <div class="form-group">
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST">
             {% csrf_token %}
-            {{ form.media }}
+            
             {{ form.as_p }}
             <br/>
         </form>
         <a href="{% url 'home' %}" class="btn btn-primary">Add Category</a>
-        <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
     </div>
 {% else %}
     You're not login Sorry ( you know it..)

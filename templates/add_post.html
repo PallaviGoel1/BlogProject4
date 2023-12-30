@@ -8,14 +8,17 @@
     <br/>
     
     <div class="form-group">
-        <form method="POST" enctype="multipart/form-data">
-            <button class="btn btn-primary float-end btn-primary-spacing" type="submit">Post</button>
-            <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
-            {% csrf_token %}
-            {{ form.media }}
-            {{ form.as_p }}
-            <br/>
-        </form>
+        <div class="container"> 
+            <form method="POST" enctype="multipart/form-data">
+                <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
+                <button class="btn btn-primary float-end btn-primary-spacing" type="submit">Post</button>
+                
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <br/>
+            </form>
+        </div>
     </div>
 {% else %}
     You're not login Sorry ( you know it..)

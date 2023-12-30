@@ -23,7 +23,11 @@ class HomeView(ListView):
     model = Post
     template_name = 'homepage.html'
     ordering = ['-date']
-    paginate_by = 6
+    
+
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html',{'cats': cats.title(), 'category_posts': category_posts })
 
 class BlogDetailView(DetailView):
     model = Post
