@@ -1,5 +1,5 @@
 body {
-    background-color : #fedada;
+    background-color : #e6dec3;
     
 }
 
@@ -11,46 +11,3 @@ footer {
     text-align: center;
  }
  
-.dark-bg {
-    background-color: #3a3229;
-}
-
-.image-container {
-    position: relative;
-}
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #5e714d;
-}
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
