@@ -4,17 +4,23 @@
 
  
 {% if user.is_authenticated %}
-    <h1>UpdateBlog</h1>
-    <br/>
-    <div class="form-group">
-        <form method="POST">
-            <button class="btn btn-primary float-end btn-primary-spacing" type="submit">UpdateBlog</button>
-            <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
-            {% csrf_token %}
-            {{ form.as_p }}
-            
-        </form>
-    </div>
+    {% if user.id == post.author.id %}
+        <h1>UpdateBlog</h1>
+        <br/>
+        <div class="form-group">
+            <form method="POST">
+                <button class="btn btn-primary float-end btn-primary-spacing" type="submit">UpdateBlog</button>
+                <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+            </form>
+        </div>
+    {% else %}
+        You're not login 'sorry'( you know it...)
+        <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
+    {% endif %}
+
 {% else %}
     You're not login 'sorry'( you know it...)
     <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>

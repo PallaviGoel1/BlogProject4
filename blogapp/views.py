@@ -5,6 +5,7 @@ from .forms import PostForm , EditForm, CommentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 
+
 # Create your views here.
 
 def LikeView(request, pk):
@@ -23,6 +24,7 @@ class HomeView(ListView):
     model = Post
     template_name = 'homepage.html'
     ordering = ['-date']
+    
     
 
 def CategoryView(request, cats):

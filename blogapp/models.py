@@ -21,7 +21,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     category =  models.CharField(max_length=255, default='coding')
-    body = models.TextField()
+    body = models.TextField(max_length=10000)
     likes = models.ManyToManyField(User,related_name = 'blogpost_like', blank=True)
     featured_image = CloudinaryField('image', default='placeholder')
     

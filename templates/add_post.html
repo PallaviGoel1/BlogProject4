@@ -4,22 +4,23 @@
 
  
 {% if user.is_authenticated %}
-    <h1>AddBlog</h1>
-    <br/>
-    
-    <div class="form-group">
-        <div class="container"> 
-            <form method="POST" enctype="multipart/form-data">
-                <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
-                <button class="btn btn-primary float-end btn-primary-spacing" type="submit">Post</button>
-                
-                {% csrf_token %}
-                {{ form.media }}
-                {{ form.as_p }}
-                <br/>
-            </form>
+        <h1>AddBlog</h1>
+        <br/>
+        
+        <div class="form-group">
+            <div class="container"> 
+                <form method="POST" enctype="multipart/form-data">
+                        <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
+                    <button class="btn btn-primary float-end btn-primary-spacing" type="submit">
+                        <a href="{% url 'home' %}" class="float-end"></a>Post</button>
+                    
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <br/>
+                </form>
+            </div>
         </div>
-    </div>
 {% else %}
     You're not login Sorry ( you know it..)
 {% endif %}
