@@ -10,9 +10,8 @@
         <div class="form-group">
             <div class="container"> 
                 <form method="POST" enctype="multipart/form-data">
-                        <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
                     <button class="btn btn-primary float-end btn-primary-spacing" type="submit">
-                        <a href="{% url 'home' %}" class="float-end"></a>Post</button>
+                    <a href="{% url 'home' %}" class="float-end"></a>Post</button>
                     
                     {% csrf_token %}
                     {{ form.media }}

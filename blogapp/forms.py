@@ -1,11 +1,7 @@
 from django import forms
 from .models import Post, Comment, Category
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
-# Apply summernote to specific fields.
-class SomeForm(forms.Form):
-    foo = forms.CharField(widget=SummernoteWidget()) 
-    
+# Apply summernote to specific fields.    
 choices = Category.objects.all().values_list('name','name')
 
 choice_list = []

@@ -4,6 +4,7 @@ from django.urls import reverse
 from datetime import datetime, date
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Category(models.Model):
@@ -21,7 +22,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     category =  models.CharField(max_length=255, default='coding')
-    body = models.TextField(max_length=10000)
+    body = RichTextField(blank=True, null=True)
     likes = models.ManyToManyField(User,related_name = 'blogpost_like', blank=True)
     featured_image = CloudinaryField('image', default='placeholder')
     

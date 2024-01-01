@@ -11,7 +11,7 @@
                     <div class="card-body">
                     <!--Here are title, category, author, date,body(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
                         <h2 class="card-title">{{ post.title }} 
-                        <a href="{% url 'category' post.category %}"> {{post.category }}</a></h2>
+                        <a href="{% url 'category' post.category|slugify %}"> {{post.category }}</a></h2>
                         <p class="card-text text-muted h6">{{ post.author }} | {{ post.date}} </p>
                         {% if user.is_authenticated %}
                             {% if user.id == post.author.id %}
@@ -33,4 +33,5 @@
         
     </div>
 </div>
+
 {% endblock %}
