@@ -19,7 +19,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255,unique=True)
     slug = models.SlugField(max_length=200)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     date = models.DateTimeField(default=timezone.now)
     category =  models.CharField(max_length=255, default='coding')
     body = RichTextField(blank=True, null=True)
