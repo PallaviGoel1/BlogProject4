@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 #ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io']
-ALLOWED_HOSTS = ['miniblog.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['miniblog23.herokuapp.com','localhost']
 
 #login/logout url
 LOGIN_REDIRECT_URL = 'home'
