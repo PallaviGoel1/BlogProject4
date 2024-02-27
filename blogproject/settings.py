@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 #ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io']
-ALLOWED_HOSTS = ['miniblog-f66148cb72c8.herokuapp.com',"LOCALHOST"]
+ALLOWED_HOSTS = ['miniblog.herokuapp.com','localhost']
 
 #login/logout url
 LOGIN_REDIRECT_URL = 'home'
@@ -52,9 +52,6 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'blogapp',
     'newmembers',
     'ckeditor',
@@ -148,7 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
