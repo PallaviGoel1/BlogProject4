@@ -24,7 +24,7 @@ class Post(models.Model):
     category =  models.CharField(max_length=255, default='coding')
     body = RichTextField(blank=True, null=True)
     likes = models.ManyToManyField(User,related_name = 'blogpost_like', blank=True)
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('media', default='placeholder')
     
     class Meta:
         ordering = ['-date']
