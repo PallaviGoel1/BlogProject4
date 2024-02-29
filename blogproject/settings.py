@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io']
+#ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io', 'local host']
 ALLOWED_HOSTS = ['miniblog23.herokuapp.com','localhost']
 
 #login/logout url
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'blogapp',
     'newmembers',
     'ckeditor',
