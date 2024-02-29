@@ -4,9 +4,9 @@ from django.urls import reverse
 from datetime import datetime, date
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
-from ckeditor.fields import RichTextField
 # Create your models here.
 
+STATUS = ((0, "Draft"), (1, "Published"))
 class Category(models.Model):
     name = models.CharField(max_length=255,unique=True)
 
@@ -22,12 +22,14 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     date = models.DateTimeField(default=timezone.now)
     category =  models.CharField(max_length=255, default='coding')
-    body = RichTextField(blank=True, null=True)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User,related_name = 'blogpost_like', blank=True)
-    featured_image = CloudinaryField('media', default='placeholder')
+    featured_image = CloudinaryField('image', default='placeholder')
     
     class Meta:
-        ordering = ['-date']
+        ordering = ['-created_on']
 
     def total_likes(self):
         return self.likes.count()
@@ -40,18 +42,20 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    body = RichTextField(blank=True, null=True)
-    date = models.DateTimeField(default=timezone.now)
+    name = models.CharField(max_length=60)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
    
 
     class Meta:
-        ordering = ["date"]
+        ordering = ["created_on"]
    
 
     def __str__(self):
-        return '%s - %s' % (self.post.title, self.name)
-
+        #return '%s - %s' % (self.post.title, self.name)
+        return f"Comment {self.body} by {self.name}"
 
 
 

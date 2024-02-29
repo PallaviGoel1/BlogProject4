@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 #all install app in django 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blogapp.urls')),
+    path('', include('blogapp.urls'), name='blog_urls'),
     path('summernote/', include('django_summernote.urls')),
     path('newmembers/', include('django.contrib.auth.urls')),
     path('newmembers/', include('newmembers.urls')),
