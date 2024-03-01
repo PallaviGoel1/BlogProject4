@@ -50,7 +50,7 @@ class Comment(models.Model):
    
 
     class Meta:
-        ordering = ["date"]
+        ordering = ["created_on"]
    
 
     def __str__(self):
