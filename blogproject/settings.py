@@ -34,7 +34,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 #ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io', 'local host']
-ALLOWED_HOSTS = ['miniblog23-f66148cb72c8.herokuapp.com','localhost']
+ALLOWED_HOSTS = [
+    'miniblog23-f66148cb72c8.herokuapp.com',
+    'localhost',
+    '8000-pallavigoel-blogproject-qkrn67y9nu5.ws-eu108.gitpod.io']
+
 
 # Application definition
 
@@ -48,8 +52,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'django_summernote',
     'blogapp',
@@ -72,6 +76,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'blogproject.urls'
@@ -147,7 +152,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
