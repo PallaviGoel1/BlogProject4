@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blogapp.urls'), name='blog_urls'),
     path('summernote/', include('django_summernote.urls')),
+    path('accounts/', include('allauth.urls')),
     path('newmembers/', include('django.contrib.auth.urls')),
     path('newmembers/', include('newmembers.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

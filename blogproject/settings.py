@@ -36,10 +36,6 @@ DEBUG = True
 #ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io', 'local host']
 ALLOWED_HOSTS = ['miniblog23.herokuapp.com','localhost']
 
-#login/logout url
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -57,6 +56,12 @@ INSTALLED_APPS = [
     'newmembers',
     'ckeditor',
 ]
+
+SITE_ID = 1
+
+#login/logout url
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
