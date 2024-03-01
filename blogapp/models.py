@@ -29,7 +29,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-date']
 
     def total_likes(self):
         return self.likes.count()
@@ -50,12 +50,12 @@ class Comment(models.Model):
    
 
     class Meta:
-        ordering = ["created_on"]
+        ordering = ["date"]
    
 
     def __str__(self):
-        #return '%s - %s' % (self.post.title, self.name)
-        return f"Comment {self.body} by {self.name}"
+        return '%s - %s' % (self.post.title, self.name)
+        #return f"Comment {self.body} by {self.name}"
 
 
 
