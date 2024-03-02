@@ -22,7 +22,7 @@
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <link rel="shortcut icon" type="image/png" href="{% static 'media/favicon.ico' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
 
 </head>
   <body>
@@ -54,7 +54,7 @@
               {% else %}
               
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'category_list' %}">Categories</a>
+                <a class="nav-link" href="{% url 'categories' %}">Categories</a>
               </li>
               {% endif %}
                   
@@ -84,7 +84,7 @@
         </nav>
       <br/>
       <div class="d-flex align-items-center justify-content-center">
-        <img src="{% static 'images/blog.jpg' %}" class="img-fluid.max-width: 400% height= auto"; alt="blog image">
+        <img src="{% static 'images/blog1.jpg' %}" class="img-fluid.max-width: 400% height= auto"; alt="blog image">
       </div>
       <div class="container">
           {% block content %}

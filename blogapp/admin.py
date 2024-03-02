@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
 #admin.site.register(Comment)
-#admin.site.register(Category)
+admin.site.register(Category)
 
 @admin.register(Post)
 
