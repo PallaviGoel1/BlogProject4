@@ -26,18 +26,18 @@ class HomeView(ListView):
     ordering = ['-date']
 
     def get_context_data(self, *args, **kwargs):
-        cats_menu = Category.objects.all()
+        cat_menu = Category.objects.all()
         context = super(HomeView,self).get_context_data(*args, **kwargs)
-        context["cats_menu"] = cats_menu
+        context["cat_menu"] = cat_menu
         return context
     
 def CategoryListView(request):
-    cats_menu_list = Category.objects.all()
-    return render(request, 'category.html',{'cats_menu_list': cats_menu_list})
+    cat_menu_list = Category.objects.all()
+    return render(request, 'category.html',{'cat_menu_list': cat_menu_list})
 
 def CategoryView(request, cats):
     Category_posts = Post.objects.filter(category=cats.replace('_',' '))
-    return render(request,'categories.html', {'cats':cats.title().replace('_',' '), 'category_posts':Category_posts} )
+    return render(request,'categories.html', {'cats':cats.title().replace('_',' '), 'category_posts':category_posts} )
 
 
 class BlogDetailView(DetailView):
