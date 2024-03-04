@@ -11,43 +11,43 @@ This app is to provide an easy way to create, maintain, share and read blogs wri
 
 This is the very first screen that will be visible to the users once app is launched. on this page, there is a menu bar with option to login or register and list of existing blogs.
 
-![Home_page_image](static/images/homepage.png)
+![Home_page_image](media/homepage.png)
 
 ## Registration Screen
 
 User will need to enter a username and select a password for this:
 
-![registration_page_image](static/images/registerpage.png)
+![registration_page_image](media/registerpage.png)
 
 ## Login Screen
 
 An existing user can enter user id and password to login here:
 
-![login_page_image](static/images/loginpage.png)
+![login_page_image](media/loginpage.png)
 
 ## Add Blog Screen
 
 There are few details needed to enter here for the user to add a blog. 
 
-![AddBlog_page_image](static/images/addblogpage.png)
+![AddBlog_page_image](media/addblogpage.png)
 
 ## Blog Screen
 
 Once clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
 
-**blog_page_image**
+![Blogscreen_image](media/blogscreen.png)
 
 ## Add category Screen
 
 There is a possibility to add category for the blog content via add category page
 
-**add_category_page**
+![Addcategory_image](media/addcategorypage.png)
 
 ## Category list Screen
 
 On this page, existing list of categories will be displayed
 
-**Category_list_page**
+![Categorylist_image](media/categoriespage.png)
 
 ## Future Roadmap
 

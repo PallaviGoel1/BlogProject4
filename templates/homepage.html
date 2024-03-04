@@ -9,6 +9,7 @@
             {% for post in post_list %}
                 <div class="card mb-4">
                     <div class="card-body">
+                       
                     <!--Here are title, category, author, date,body(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
                         <h2 class="card-title">{{ post.title }} 
                         <a href="{% url 'category' post.category|slugify %}"> {{post.category }}</a></h2>

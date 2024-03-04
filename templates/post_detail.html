@@ -15,6 +15,21 @@
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.date }}</p>
+
+                <div class="d-none d-md-block col-md-6 masthead-image">
+                    <!-- The featured image URL goes in the src attribute -->
+                    {% if "placeholder" in post.featured_image.url %}
+                    
+                        <img class="card-img-top" src=" {{ post.featured_image.url }}" width="100%"><br/>
+                        
+                    {% endif %}
+                    
+                </div>
+                <div class="card-body">
+                    <p class="card-text ">
+                    {{ post.body | safe }}
+                    </p>
+                </div>
             </div>
             
             {% if user.is_authenticated %}
@@ -25,13 +40,7 @@
                 {% endif %}
             {% endif %}
             
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                    <img src=" {{ post.featured_image.url }}" width="100%"><br/>
-                {% endif %}
-                {{ post.body | safe }}
-            </div>
+           
         </div>
     </div>
     <a href="{% url 'home' %}" class="btn btn-primary float-end btn-primary-spacing">Back</a>
@@ -80,6 +89,8 @@
             <br/>
             <br/>
             <a href="{% url 'comment' post.pk %}">Add Comments</a>
+            <br/>
+            <br/>
         {% endfor %}
     {% endif %}
     <br/>
