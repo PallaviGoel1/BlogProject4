@@ -119,7 +119,7 @@ GUI tests performed for this app are as follows:
 
 Lighthouse application test results are here for this app
 
-**Light_house_test**
+![lighthouse_image](media/lighthouse.png)
 
 ### Bugs
 

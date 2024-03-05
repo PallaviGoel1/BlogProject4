@@ -20,12 +20,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+    <link href="summernote.css" rel="stylesheet">
+    <script src="summernote.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
 
 </head>
   <body>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/favicon.ico' %}"></a>
@@ -91,7 +94,7 @@
           
           {% endblock %}
   </div>
-
+  <div id="summernote"></div>
       <!---Footer-->
       <footer class="footer mt-auto py-3">
           <p class="m-0 text-center text-black">Follow us:
@@ -101,5 +104,10 @@
               <a href="https://www.youtube.com/" class="youtube" target="_blank"><i class="fab fa-youtube-square ms-3"></i></a></p>
       </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+          $('#summernote').summernote();
+      });
+    </script>
   </body> 
 </html>

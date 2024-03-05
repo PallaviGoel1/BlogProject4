@@ -22,6 +22,7 @@ def LikeView(request, pk):
 
 class HomeView(ListView):
     model = Post
+    cat= Category.objects.all()
     template_name = 'homepage.html'
     ordering = ['-date']
 
@@ -84,8 +85,9 @@ class AddCommentView(CreateView):
     
 class UpdatePostView(UpdateView):
     model = Post
-    form_class = EditForm
     template_name = 'update_post.html'
+    form_class = EditForm
+    
    
 
 class DeletePostView(DeleteView):

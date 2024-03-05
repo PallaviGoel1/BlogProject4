@@ -7,7 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 #admin.site.register(Comment)
 admin.site.register(Category)
 
-@admin.register(Post)
+#@admin.register(Post, PostAdmin)
 
 class PostAdmin(SummernoteModelAdmin):
 
@@ -15,9 +15,9 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'body']
     list_filter = ('status', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('body')
+    summernote_fields = ('body',)
     #list_per_page = 4
-#admin.site.register(Post, PostAdmin)
+admin.site.register(Post, PostAdmin)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
