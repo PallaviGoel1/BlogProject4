@@ -29,7 +29,7 @@ An existing user can enter user id and password to login here:
 
 There are few details needed to enter here for the user to add a blog. 
 
-![AddBlog_page_image](media/addblogpage.png)
+![AddBlog_page_image](media/addblog.png)
 
 ## Blog Screen
 
@@ -82,7 +82,7 @@ Deployment of this project is done via Heroku. Steps followed are as follows:
 10. Click connect
 11. Click on deploy branch
 12. Click on view app
-13. App opened in new screen (**link of project from hiraku**)
+13. App opened in new screen (**(https://miniblog23-f66148cb72c8.herokuapp.com/)**)
 
 ### Planning
 
