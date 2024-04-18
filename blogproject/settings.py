@@ -31,13 +31,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = ['8000-pallavigoel-blogproject-skjlyzwlvjh.ws-eu107.gitpod.io', 'local host']
 ALLOWED_HOSTS = [
     'miniblog23-f66148cb72c8.herokuapp.com',
     'localhost',
-    '8000-pallavigoel-blogproject-qkrn67y9nu5.ws-eu108.gitpod.io']
+    '8000-pallavigoel-blogproject-2ahyjtfaup6.ws-us110.gitpod.io']
 
 
 # Application definition
