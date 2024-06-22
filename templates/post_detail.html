@@ -12,9 +12,10 @@
                 <!--current user : {{ user.id }}</h3>
                 post author : {{ post.author.id }} both are used for user and author id</h3>-->
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
+                <h2 class="post-title">Blog-Title= {{ post.title }}</h2>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <h3 class="post-subtitle">{{ post.author }} | {{ post.date }}</h3>
+                <h3 class="post-subtitle">Author= {{ post.author }} <br>
+                    Date&Time= {{ post.date }}</h3>
 
                 <!--<div class="d-none d-md-block col-md-6 masthead-image">
                      The featured image URL goes in the src attribute -->
@@ -26,28 +27,10 @@
                     
                 </div>-->
                 <div class="card-body">
-                    <p class="card-text ">
-                   <strong>{{ post.body | safe }}</strong> 
+                    <p class="card-text ">{{ post.body | safe }} 
                     </p>
                 </div>
             </div>
-            
-            {% if user.is_authenticated %}
-                {% if user.id == post.author.id %}
-                    <!-- here Edit and delete file call -->
-                    <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
-                    <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>
-                {% endif %}
-            {% endif %}
-            
-           
-        </div>
-    </div>
-    <a href="{% url 'home' %}" class="btn btn-primary float-end btn-primary-spacing">Back</a>
-</div>
-    <br>
-    <br/>
-   
 
     {% if user.is_authenticated %}
     <!-- here likes and unlike count show -->
@@ -62,17 +45,28 @@
             <button type="submit", name="post_id", value="{{ post.id }}", class="btn-like"><i class="fas fa-heart"></i>
                 Like
             </button>
+            
         {% endif %}
+        <span class="text-secondary"><strong>{{ post.total_likes }}</strong> </span>
     </form>
+
     {% else %}  
     <a href="{% url 'login' %}">Login</a>
         Please logged for Like......
     {% endif %}
 
-    <span class="text-secondary">{{ post.total_likes }} </span>
+    
    <br>
-   <br>
-   <hr>
+   {% if user.is_authenticated %}
+   {% if user.id == post.author.id %}
+       <!-- here Edit and delete file call -->
+       <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
+       <a href="{% url 'delete_post' post.pk %} ">(Delete)</a>
+       <a href="{% url 'home' %}">(Back)</a></p>
+    {% endif %}
+    {% endif %}      
+</div>
+
    <h3>Comments...</h3>
    <!-- here add the comment show with name ,date -->
     

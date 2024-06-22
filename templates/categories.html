@@ -17,14 +17,15 @@
         {{ post.body | slice:":200" | safe }}
 
     </li>
-    <br>
-    </br>
+    
     {% endfor %}
-    <br/>
-    <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+    
+    <a href="{% url 'category' %}" class="btn btn-primary">Back</a>
 </ul>
 {% else %}
     <h2>Sorry this page does not exist.. </h2>
+    <a href="{% url 'category' %}" class="btn btn-primary">Back</a>
+
 
 {% endif %}
 
