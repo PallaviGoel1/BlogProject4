@@ -20,7 +20,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255,unique=True)
     slug = models.SlugField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateField(default=timezone.now)
     category =  models.CharField(max_length=255, default='coding')
     body = models.TextField(null= True, blank= True)
     created_on = models.DateTimeField(auto_now_add=True)

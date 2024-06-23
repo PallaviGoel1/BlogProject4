@@ -9,23 +9,12 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!--current user : {{ user.id }}</h3>
-                post author : {{ post.author.id }} both are used for user and author id</h3>-->
                 <!-- Post title goes in these h1 tags -->
-                <h2 class="post-title">Blog-Title= {{ post.title }}</h2>
+                current User : {{user.id}}
+                <h2 class="post-title"> <small>Title of blog={{ post.title }}</small> </h2>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <h3 class="post-subtitle">Author= {{ post.author }} <br>
-                    Date&Time= {{ post.date }}</h3>
-
-                <!--<div class="d-none d-md-block col-md-6 masthead-image">
-                     The featured image URL goes in the src attribute -->
-                    <!--{% if "placeholder" in post.featured_image.url %}
-                    
-                        <img class="card-img-top" src=" {{ post.featured_image.url }}" width="100%"><br/>
-                        
-                    {% endif %}
-                    
-                </div>-->
+                <h3 class="post-subtitle"><small>Author= {{ post.author }} </small><br>
+                    <small>Date={{ post.date }}</small></h3>
                 <div class="card-body">
                     <p class="card-text ">{{ post.body | safe }} 
                     </p>
