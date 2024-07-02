@@ -37,7 +37,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'miniblog23-f66148cb72c8.herokuapp.com',
     'localhost',
-    '8000-pallavigoel-blogproject-4tvn517l18z.ws-eu114.gitpod.io']
+    '8000-pallavigoel-blogproject-popncsdu4qb.ws.codeinstitute-ide.net']
 
 
 # Application definition
