@@ -11,19 +11,19 @@ admin.site.register(Profile)
 
 class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', 'status', 'date')
-    search_fields = ['title', 'body']
+    list_display = ('title', 'slug', 'status', 'date_posted')
+    search_fields = ['title', 'content']
     list_filter = ('status','title')
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('body',)
+    summernote_fields = ('content',)
    
 admin.site.register(Post, PostAdmin)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'post', 'approved')
+    list_display = ('name', 'content', 'post', 'approved')
     list_filter = ('approved','name')
-    search_fields = ('name', 'email', 'body')
+    search_fields = ('name', 'email', 'content')
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):

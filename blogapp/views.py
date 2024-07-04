@@ -24,7 +24,7 @@ class HomeView(ListView):
     model = Post
     cat= Category.objects.all()
     template_name = 'homepage.html'
-    ordering = ['-date']
+    ordering = ['date_posted']
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()

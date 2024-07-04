@@ -10,9 +10,9 @@
                 <div class="card mb-4">
                     <div class="card-body">
                        
-                    <!--Here are title, category, author, date,body(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
+                    <!--Here are title, category, author, date_posted,content(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
                         <h2 class="card-title">{{ post.title }} </h2>
-                        <p class="card-text text-muted h6">Author={{ post.author }} <br> Date= {{ post.date}} </p>
+                        <p class="card-text text-muted h6">Author={{ post.author }} <br> Date= {{ post.date_posted}} </p>
                         {% if user.is_authenticated %}
                             {% if user.id == post.author.id %}
                             <h6 class="card-title">User Id = {{post.author.id}}</h6>
@@ -20,10 +20,10 @@
                                 <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>
                                 {% endif %}
                         {% endif %}
-                        <p class="card-text">{{post.body|slice:":100"|safe}}</p>
+                        <p class="card-text">{{post.content|slice:":100"|safe}}</p>
                         <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary"> Read More &rarr; </a>
                         <hr/>
-                        <p class="card-text text-muted h6">{{ post.date}} <i class="far fa-heart"></i>
+                        <p class="card-text text-muted h6">{{ post.date_posted}} <i class="far fa-heart"></i>
                         {{ post.total_likes }}
                         </p>
                         <hr/>
