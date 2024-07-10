@@ -2,37 +2,29 @@ from django import forms
 from .models import Post, Comment, Category
 from django_summernote.widgets import SummernoteWidget
 
-# Apply summernote to specific fields.    
-# choices = Category.objects.all().values_list('name','name')
-
-# choice_list = []
-
-# for item in choices:
-#     choice_list.append(item)
-
 class PostForm(forms.ModelForm):
+
     class Meta:
         model = Post
-        fields = ('title','slug','date_posted','author','content')
+        fields = ('title','slug','author','category','content','snippet','blog_image')
 
         widgets = {
             'title': forms.TextInput(attrs={'class':'form-control'}),
             'slug' : forms.TextInput(attrs={'class':'form-control'}),
-            'author' : forms.TextInput(attrs={'class':'form-control','value':'', 'id': 'elder'}),
-            #'category' : forms.Select(choices=choice_list,attrs={'class':'form-control'}),
+            #'author' : forms.TextInput(attrs={'class':'form-control','value':'', 'id': 'elder'}),
             'content' : SummernoteWidget(),
-            #'content' :  forms.TextField(),
+            'snippet' : forms.Textarea(attrs={'class': 'form-control'}),
         }
 
 
 class EditForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title','author','content')
+        fields = ('title','content')
 
         widgets = {
-            'title': forms.TextInput(attrs={'class':'form-control'}),
-            'content' : forms.Textarea(attrs={'class':'form-control'}),
+            #'title': forms.TextInput(attrs={'class':'form-control'}),
+            'content' : SummernoteWidget(),
         }
 
 class CommentForm(forms.ModelForm):

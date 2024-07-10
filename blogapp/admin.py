@@ -11,9 +11,9 @@ admin.site.register(Profile)
 
 class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', 'status', 'date_posted')
+    list_display = ('title', 'slug', 'date_posted')
     search_fields = ['title', 'content']
-    list_filter = ('status','title')
+    list_filter = ('title',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
    

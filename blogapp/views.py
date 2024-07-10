@@ -24,7 +24,7 @@ class HomeView(ListView):
     model = Post
     cat= Category.objects.all()
     template_name = 'homepage.html'
-    ordering = ['date_posted']
+    ordering = ['-date_posted']
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -87,8 +87,8 @@ class UpdatePostView(UpdateView):
     model = Post
     template_name = 'update_post.html'
     form_class = EditForm
+   # ordering = ['-update_date']
     
-   
 
 class DeletePostView(DeleteView):
     model = Post
