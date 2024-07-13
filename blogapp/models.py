@@ -34,12 +34,15 @@ class Profile(models.Model):
     def __str__(self):
         return  str(self.user)
 
+    def get_absolute_url(self):
+        return reverse("home")
+
 
 class Post(models.Model):
     title = models.CharField(max_length=255, unique= False)
     slug = models.SlugField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    date_posted = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(auto_now_add=True)
     category = models.CharField(max_length=255, default='coding')
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
@@ -52,6 +55,12 @@ class Post(models.Model):
     class Meta:
         ordering = ['-date_posted']
 
+    def update(self, *args, **kwargs):
+        kwargs.update({'update_date': timezone.now})
+        super().update(*args, **kwargs)
+
+        return self
+
     def total_likes(self):
         return self.likes.count()
 
@@ -61,11 +70,6 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("home")
     
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        return super().save(*args, **kwargs)
-
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
@@ -75,9 +79,9 @@ class Comment(models.Model):
     date_posted =  models.DateTimeField(default=timezone.now)
     approved = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ["date_posted"]
+    #class Meta:
+     #   ordering = ["date_posted"]
    
     def __str__(self):
         return '%s-%s' % (self.post.title, self.name)
-        #return f"Comment {self.content} by {self.name}"
+       

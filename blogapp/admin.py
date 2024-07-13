@@ -23,7 +23,7 @@ admin.site.register(Post, PostAdmin)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'content', 'post', 'approved')
     list_filter = ('approved','name')
-    search_fields = ('name', 'email', 'content')
+    search_fields = ('name', 'content')
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):

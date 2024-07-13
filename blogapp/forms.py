@@ -1,6 +1,7 @@
 from django import forms
 from .models import Post, Comment, Category
 from django_summernote.widgets import SummernoteWidget
+from datetime import datetime
 
 class PostForm(forms.ModelForm):
 
@@ -21,6 +22,7 @@ class EditForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title','content')
+        model.update_date = datetime.now()
 
         widgets = {
             #'title': forms.TextInput(attrs={'class':'form-control'}),
@@ -30,4 +32,9 @@ class EditForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name','email','content')
+        fields = ('name','content')
+
+        widgets = {
+            'name' : forms.TextInput(attrs={'class':'form-control'}),
+            'content' : forms.Textarea(attrs={'class':'form-control'}),
+        }

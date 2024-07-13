@@ -31,6 +31,7 @@ class HomeView(ListView):
         context = super(HomeView,self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
+
     
 def CategoryListView(request):
     cat_menu_list = Category.objects.all()
@@ -71,11 +72,12 @@ class AddCategoryView(CreateView):
    model = Category
    template_name = 'add_category.html'
    fields = '__all__'
+   #ordering = ['category'] 
 
 class AddCommentView(CreateView):
     model = Comment
     form_class = CommentForm
-    template_name ='comments.html'
+    template_name ='add_comment.html'
     
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']

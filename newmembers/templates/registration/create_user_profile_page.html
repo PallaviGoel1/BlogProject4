@@ -1,31 +1,23 @@
 {% extends 'base.html' %}
-{% block title %}Add New Blog {% endblock %}
+{% block title %}Create New Profile Page {% endblock %}
 {% block content %}
 
  
 {% if user.is_authenticated %}
-        <h1>AddBlog</h1>
+        <h1>Create Profile Page...</h1>
         
         <div class="form-group">
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.media }}
                     {{ form.as_p }}
-                    <button class="btn btn-primary" type="submit">Post</button>
+                    <button class="btn btn-primary" type="submit">Create Profile Page</button>
                     <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
                 </form>
                 
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br>
             
         </div>
-        <script> 
-            var name = "{{ user.id }}";
-            document.getElementById("elder").value
-                =name;
-        </script>
+       
 {% else %}
     You're not login Sorry ( you know it..)
 {% endif %}

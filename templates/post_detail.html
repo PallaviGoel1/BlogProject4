@@ -68,7 +68,7 @@
     {% if post.author.profile.profile_pic %}
             <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start" width=100 height=100 alt="profilepic">
     {% else %}       
-            <img src="{% static 'images/default_profile_pic.png ' %}" class="img-fluid rounded-start" width=100 height=100 alt="profilepic" >
+            <img src="{% static 'images/default_profile_pic.png' %}" class="img-fluid rounded-start" width=100 height=100 alt="profilepic" >
     {% endif %}
         </div>
             <div class="col-md-10">
@@ -105,21 +105,23 @@
    <!-- here add the comment show with name ,date_posted -->
     
     {% if not post.comments.all %}
-        No Comments yet... <a href="{% url 'comment' post.pk %}">Add One</a>
+        No Comments yet... 
+        <a href="{% url 'add_comment' post.pk %}">Add Comments</a>
     {% else %}
-        {% for comment in post.comments.all %}
-            <strong>   
-                {{ comment.name }} -
-                {{ comment.date_posted }}
-            </strong> 
-            <br/>
-                {{ comment.content }}
-            <br/>
-            <br/>
-            <a href="{% url 'comment' post.pk %}">Add Comments</a>
-            <br/>
-            <br/>
-        {% endfor %}
+
+            {% for comment in post.comments.all %}
+                <strong>   
+                    {{ comment.name }} -
+                    {{ comment.date_posted }}
+                </strong> 
+                <br/>
+                    {{ comment.content }}
+                <br/>
+                <br/>
+                <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+                <br/>
+                <br/>
+            {% endfor %}
     {% endif %}
     <br/>
     <hr>
