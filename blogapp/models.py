@@ -33,6 +33,8 @@ class Profile(models.Model):
 
     def __str__(self):
         return  str(self.user)
+       # return self.user.username
+
 
     def get_absolute_url(self):
         return reverse("home")
@@ -55,12 +57,6 @@ class Post(models.Model):
     class Meta:
         ordering = ['-date_posted']
 
-    def update(self, *args, **kwargs):
-        kwargs.update({'update_date': timezone.now})
-        super().update(*args, **kwargs)
-
-        return self
-
     def total_likes(self):
         return self.likes.count()
 
@@ -79,9 +75,9 @@ class Comment(models.Model):
     date_posted =  models.DateTimeField(default=timezone.now)
     approved = models.BooleanField(default=False)
 
-    #class Meta:
-     #   ordering = ["date_posted"]
+    class Meta:
+      ordering = ["-date_posted"]
    
     def __str__(self):
-        return '%s-%s' % (self.post.title, self.name)
-       
+      #  return '%s-%s' % (self.post.title, self.name)
+        return f"Comment {self.body} by {self.name}"

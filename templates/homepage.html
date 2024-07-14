@@ -12,7 +12,8 @@
                        
                     <!--Here are title, category, author, date_posted,content(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
                         <h2 class="card-title">{{ post.title }} </h2>
-                        <p class="card-text text-muted h6">Author = {{ post.author }} <br> Created Date = {{ post.date_posted}} 
+                        <p class="card-text text-muted h6">
+                          Author = {{ post.author }} <br> Created Date = {{ post.date_posted}} 
                         <br> Updated Date = {{ post.update_date }} </p>
                         {% if user.is_authenticated %}
                             {% if user.id == post.author.id %}
