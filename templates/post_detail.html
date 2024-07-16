@@ -102,32 +102,30 @@
             </div>
     </div>
 </div>
-    
-   <h3>Comments...</h3>
+    <hr>
+    <h3>Comments...</h3>
    <!-- here add the comment show with name ,date_posted -->
     
     {% if not post.comments.all %}
         No Comments yet... 
-        <a href="{% url 'add_comment' post.pk %}">Add Comments</a>
+        <a href="{% url 'add_comment' post.pk %}">Add One</a>
     {% else %}
-
             {% for comment in post.comments.all %}
-                <strong>   
+                <strong>    
                     {{ comment.name }} -
                     {{ comment.date_posted }}
                 </strong> 
-                <br/>
+                <br/>   
                     {{ comment.content }}
                 <br/>
-                <br/>
+                <hr>
                 <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
                 <br/>
                 <br/>
             {% endfor %}
     {% endif %}
-    <br/>
-    <hr>
+    <br>
 </div>
-<br/>
-
+<br>
+<br><br>
 {% endblock %}

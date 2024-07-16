@@ -51,6 +51,7 @@ class Post(models.Model):
     blog_image = models.ImageField(null=True, blank=True, upload_to="images/" )
     
     
+    
     class Meta:
         ordering = ['-date_posted']
 
@@ -67,7 +68,6 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
     name = models.CharField(max_length=60)
-    email = models.EmailField()
     content = models.TextField()
     date_posted =  models.DateTimeField(default=timezone.now)
 
@@ -76,4 +76,4 @@ class Comment(models.Model):
    
     def __str__(self):
       #  return '%s-%s' % (self.post.title, self.name)
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.content} by {self.name}"

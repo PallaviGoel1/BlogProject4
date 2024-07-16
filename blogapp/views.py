@@ -76,13 +76,7 @@ class AddBlogView(CreateView):
     def form_valid(self, form):
        form.instance.author = self.request.user
        return super().form_valid(form)
-   # def form_valid(self, form):
-    #    current_user =self.request.user
-     #   if current_user.is_authenticated:
-      #      from.instance.author = current_user
-       #     return super(type(self), self).form_valid(form)
-       # else:
-        #    return redirect('/blog/')
+    
 
 class AddCategoryView(CreateView):
    model = Category
@@ -97,8 +91,9 @@ class AddCommentView(CreateView):
 
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
-        return super(AddCommentView, self).form_invalid(form)
-        success_url = reverse_lazy("home")
+        return super().form_valid(form)
+
+    success_url = reverse_lazy("home")
     
     
 class UpdatePostView(UpdateView):
