@@ -79,23 +79,25 @@
                         <a href ="{% url 'show_profile_page' post.author.profile.id %}">Profile Page</a>
                         
                         {% if post.author.profile.website_url %}
-                           | <a href =" {{post.author.profile.website_url}}">Website </a> 
+                           | <a href =" {{post.author.profile.website_url}}" target=”_blank” rel="noopener">Website </a> 
                         {% endif %}
                        
                         {% if post.author.profile.facebook_url %}
-                           | <a href =" {{post.author.profile.facebook_url}}">Facebook </a>
+                           | <a href =" {{post.author.profile.facebook_url}}" target=”_blank” rel="noopener">Facebook </a>
                         {% endif %}                            
                         
                         {% if post.author.profile.twitter_url %}
-                           | <a href =" {{post.author.profile.twitter_url}}">Twitter </a> 
+                           | <a href =" {{post.author.profile.twitter_url}}" target=”_blank” rel="noopener">Twitter </a> 
                         {% endif %}
                         
                         {% if post.author.profile.instragram_url %}
-                           | <a href =" {{post.author.profile.instagram_url}}">Instagram </a>
+                           | <a href =" {{post.author.profile.instagram_url}}" target=”_blank” rel="noopener">Instagram </a>
                         {% endif %}
                     </p>
                     <p class="card-text">{{ post.author.profile.bio }}</p>
+                    
                     <p class="card-text"><small class="text-muted"> {{ post.update_date }} </small></p>
+                    
                 </div>
             </div>
     </div>

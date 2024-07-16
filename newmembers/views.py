@@ -12,7 +12,6 @@ class CreateProfilePageView(CreateView):
     form_class = ProfilePageForm
     template_name = "registration/create_user_profile_page.html"
     
-
     def form_vaild(self, form):
         form.instance.user = self.request.user
         return super().form_vaild(form)

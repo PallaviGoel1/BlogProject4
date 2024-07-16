@@ -68,6 +68,22 @@ class AddBlogView(CreateView):
     form_class = PostForm
     template_name = 'add_post.html'
 
+    def blogView(request):
+        current_user = request.user
+        user_list = simpleList.objects.filter(author=current_user)
+        return render(render, {'userlist': user_list})
+
+    def form_valid(self, form):
+       form.instance.author = self.request.user
+       return super().form_valid(form)
+   # def form_valid(self, form):
+    #    current_user =self.request.user
+     #   if current_user.is_authenticated:
+      #      from.instance.author = current_user
+       #     return super(type(self), self).form_valid(form)
+       # else:
+        #    return redirect('/blog/')
+
 class AddCategoryView(CreateView):
    model = Category
    template_name = 'add_category.html'

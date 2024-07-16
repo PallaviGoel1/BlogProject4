@@ -15,9 +15,12 @@
         </div>
             <div class="col-md-10">
                 <div class="card-body">
-                    <h5 class="card-title">{{ page_user.user.author}}</h5>
-                    <p class="small text-muted">
+                    <h5 class="card-title">
+                        {{ page_user.user.first_name }}
+                        {{ page_user.user.last_name}}
+                        {{ page_user.user.author.profile_id}}</h5>
 
+                    <p class="small text-muted">
                         {% if page_user.website_url %}
                            | <a href =" {{page_user.website_url}}">Website </a> 
                         {% endif %}
