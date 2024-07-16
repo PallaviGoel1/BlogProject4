@@ -128,3 +128,4 @@ During development, I came across various issues and managed to fix them all by 
 ## Credits
 
 I fetched help for coding from tutorial provided by Code Institute, boot strap, Django and Slack community. For logo creation Favicon been helpful resource for me. Also used free to access images from google search.
+
