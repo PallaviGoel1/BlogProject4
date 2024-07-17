@@ -3,7 +3,7 @@ from django.views import generic
 from django.views.generic import DetailView, CreateView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.urls import reverse_lazy
-from .forms import SignUpForm, ProfilePageForm, EditProfileForm
+from .forms import SignUpForm, ProfilePageForm, EditProfileForm, PasswordChangingForm
 from blogapp.models import Profile
 from django.contrib.auth.views import PasswordChangeView
 
@@ -12,6 +12,7 @@ class CreateProfilePageView(CreateView):
     model = Profile
     form_class = ProfilePageForm
     template_name = "registration/create_user_profile_page.html"
+    
     
     def form_vaild(self, form):
         form.instance.user = self.request.user
@@ -39,7 +40,7 @@ class ShowProfilePageView(DetailView):
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangeForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('password_success')
 
 def password_success(request):
     return render(request, 'registration/password_success.html', {})

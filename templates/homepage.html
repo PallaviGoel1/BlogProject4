@@ -6,36 +6,55 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-10 mt-3 left">
-            {% for post in post_list %}
-                <div class="card mb-4">
-                    <div class="card-body">
-                       
-                    <!--Here are title, category, author, date_posted,content(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
-                        <h2 class="card-title">{{ post.title }} </h2>
-                        <p class="card-text text-muted h6">
-                          Author = {{ post.author }} <br> Created Date = {{ post.date_posted}} 
-                        <br> Updated Date = {{ post.update_date }} </p>
-                        {% if user.is_authenticated %}
-                            {% if user.id == post.author.id %}
-                            <h6 class="card-title">User Id = {{post.author.id}}</h6>
-                                <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
-                                <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>
+            <div class="row">
+                {% for post in post_list %}
+                    <div class="card mb-4">
+                            <div class="card-body">
+                            
+                                <!--Here are title, category, author, date_posted,content(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
+                                <h2 class="card-title">{{ post.title }} </h2>
+                                <p class="card-text text-muted h6">
+                                Author = {{ post.author }} <br> Created Date = {{ post.date_posted}} 
+                                <br> Updated Date = {{ post.update_date }} </p>
+                                {% if user.is_authenticated %}
+                                    {% if user.id == post.author.id %}
+                                    <h6 class="card-title">User Id = {{post.author.id}}</h6>
+                                        <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
+                                        <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>
+                                    {% endif %}
                                 {% endif %}
-                        {% endif %}
-                        <p class="card-text">{{post.snippet}}</p>
-                        
-                        <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary"> Read More &rarr; </a>
-                        <hr/>
-                        <p class="card-text text-muted h6"><i class="far fa-heart"></i>
-                        {{ post.total_likes }}
-                        </p>
-                        <hr/>
+                                <p class="card-text">{{post.snippet}}</p>
+                                
+                                <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary"> Read More &rarr; </a>
+                                <hr/>
+                                <p class="card-text text-muted h6"><i class="far fa-heart"></i>
+                                {{ post.total_likes }}
+                                </p>
+                                <hr/>
+                            </div>
                     </div>
-                </div>
-            {% endfor %}
+            
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+             </div>   
         </div>
-        
     </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
-<br><br><br><br>
+    <br><br><br><br>
 {% endblock %}
