@@ -2,30 +2,32 @@
 {% block title %}Add New Blog {% endblock %}
 {% block content %}
 
- 
-{% if user.is_authenticated %}
-        <h1>AddBlog</h1>
+<div class="container-fluid" style="width: 90vw;">
+<h1 style="width: fit-content">AddBlog</h1>
+    
+    {% if user.is_authenticated %}
         
-        <div class="form-group">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.media }}
-                    {{ form.as_p }}
-                    <button class="btn btn-primary" type="submit">Post</button>
-                    <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
-                </form>
+    <div class="form-group" style="width: 100%;">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit">Post</button>
+            <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
+        </form>
                 
-                <br>
-                <br>
-                <br>
-                <br>
+        <br>
+        <br>
+        <br>
+        <br>
             
-        </div>
-        <script> 
-            var name = "{{ user.id }}";
-            document.getElementById("elder").value
-                =name;
-        </script>
+    </div>
+    </div>
+    <script> 
+        var name = "{{ user.id }}";
+        document.getElementById("elder").value
+            =name;
+    </script>
 {% else %}
     You're not login Sorry ( you know it..)
 {% endif %}

@@ -9,37 +9,41 @@
             <div class="row">
                 {% for post in post_list %}
                     <div class="card border-dark border border-3 mb-4">
-                            <div class="card-body">
+                        <div class="card-body">
                             
-                                <!--Here are title, category, author, date_posted,content(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
-                                <h2 class="card-title">{{ post.title }} </h2>
-                                <p class="card-text text-muted h6">
+                            <!--Here are title, category, author, date_posted,content(path use),likes (count show) Edit, delete, category,post_detail (file use)-->
+                            <h2 class="card-title">{{ post.title }} </h2>
+                            <p class="card-text text-muted h6">
                                 Author = {{ post.author }} <br> Created Date = {{ post.date_posted}} 
-                                <br> Updated Date = {{ post.update_date }} </p>
-                                {% if user.is_authenticated %}
-                                    {% if user.id == post.author.id %}
+                                <br> Updated Date = {{ post.update_date }} 
+                            </p>
+                            
+                            {% if user.is_authenticated %}
+                                {% if user.id == post.author.id %}
                                     <h6 class="card-title">User Id = {{post.author.id}}</h6>
-                                        <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
-                                        <a href="{% url 'delete_post' post.pk %} ">(Delete)</a></p>
-                                    {% endif %}
+                                    <p class="card-text">
+                                        <a href="{% url 'update_post' post.pk %} ">(Edit)</a>
+                                        <a href="{% url 'delete_post' post.pk %} ">(Delete)</a>
+                                    </p>
                                 {% endif %}
-                                <p class="card-text">{{post.snippet}}</p>
+                            {% endif %}
+                            <p class="card-text">{{post.snippet}}</p>
                                 
-                                <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary"> Read More &rarr; </a>
-                                <hr/>
-                                <p class="card-text text-muted h6"><i class="far fa-heart"></i>
+                            <a href="{% url 'post_detail' post.pk  %}" class="btn btn-primary"> Read More &rarr; </a>
+                            <hr/>
+                            <p class="card-text text-muted h6"><i class="far fa-heart"></i>
                                 {{ post.total_likes }}
-                                </p>
-                                <hr/>
-                            </div>
+                            </p>
+                            <hr/>
+                        </div>
                     </div>
             
-            {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}
-                {% endfor %}
-             </div>   
+            {% endfor %}
+            </div>   
         </div>
     </div>
     {% if is_paginated %}
@@ -56,5 +60,5 @@
     </nav>
     {% endif %}
 </div>
-    <br><br><br><br>
+<br><br><br><br>
 {% endblock %}

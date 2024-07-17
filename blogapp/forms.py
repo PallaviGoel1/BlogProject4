@@ -19,7 +19,7 @@ class PostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class':'form-control'}),
             'slug' : forms.TextInput(attrs={'class':'form-control'}),
             'category' : forms.Select(choices=choice_list,attrs={'class':'form-control'}),
-            'content' : SummernoteWidget(),
+            'content' : SummernoteWidget(attrs={'summernote':{'width': '100%'}}),
             'snippet' : forms.Textarea(attrs={'class': 'form-control'}),
         }
 
@@ -32,7 +32,7 @@ class EditForm(forms.ModelForm):
 
         widgets = {
             #'title': forms.TextInput(attrs={'class':'form-control'}),
-            'content' : SummernoteWidget(),
+            'content' : SummernoteWidget(attrs={'summernote':{'width': '100%'}}),
         }
 
 class CommentForm(forms.ModelForm):

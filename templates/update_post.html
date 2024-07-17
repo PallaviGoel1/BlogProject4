@@ -2,11 +2,13 @@
 {% block title %} EditBlog {% endblock %}
 {% block content %}
 
- 
+
+<div class="container-fluid" style="width: 90vw;">
+    <h1 style="width: fit-content">UpdateBlog</h1>
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
-        <h1>UpdateBlog</h1>   
-        <div class="form-group">
+  
+        <div class="form-group" style="width: 100%;">
             <form method="POST">
                 {% csrf_token %}
                 {{ form.media }}
@@ -24,5 +26,6 @@
     You're not login 'sorry'( you know it...)
     <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
 {% endif %}
+</div>
 
 {% endblock %}
