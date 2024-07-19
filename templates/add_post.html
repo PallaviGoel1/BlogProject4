@@ -16,17 +16,12 @@
             <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
         </form>
                 
-        <br>
-        <br>
-        <br>
-        <br>
-            
+        <br> <br> <br> <br> <br>
     </div>
     </div>
     <script> 
         var name = "{{ user.id }}";
-        document.getElementById("elder").value
-            =name;
+        document.getElementById("elder").value=name;
     </script>
 {% else %}
     You're not login Sorry ( you know it..)

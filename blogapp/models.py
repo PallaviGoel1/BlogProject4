@@ -6,6 +6,8 @@ from datetime import datetime, date
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 
 class Category(models.Model):

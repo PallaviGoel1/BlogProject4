@@ -52,9 +52,9 @@
    {% if user.is_authenticated %}
    {% if user.id == post.author.id %}
        <!-- here Edit and delete file call -->
-       <p class="card-text"><a href="{% url 'update_post' post.pk %} ">(Edit)</a>
-       <a href="{% url 'delete_post' post.pk %} ">(Delete)</a>
-       <a href="{% url 'home' %}">(Back)</a></p>
+       <p class="card-text"><a href="{% url 'update_post' post.pk %} "><strong>(Edit)</strong></a>
+       <a href="{% url 'delete_post' post.pk %} "><strong>(Delete)</strong></a>
+       <a href="{% url 'home' %}"><strong> (Back) </strong></a></p>
     {% endif %}
     {% endif %}      
 </div>

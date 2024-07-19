@@ -25,6 +25,19 @@ class EditProfilePageView(generic.UpdateView):
     success_url = reverse_lazy('home')
 
 
+class UserRegisterView(generic.CreateView):
+    form_class = SignUpForm
+    template_name = 'registration/register.html'
+    success_url = reverse_lazy('login')
+
+class UserEditView(generic.UpdateView):
+    form_class = EditProfileForm
+    template_name = 'registration/edit_profile.html'
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return self.request.user
+
 class ShowProfilePageView(DetailView):
     model = Profile
     template_name = 'registration/user_profile.html'
@@ -44,17 +57,3 @@ class PasswordsChangeView(PasswordChangeView):
 
 def password_success(request):
     return render(request, 'registration/password_success.html', {})
-
-
-class UserRegisterView(generic.CreateView):
-    form_class = SignUpForm
-    template_name = 'registration/register.html'
-    success_url = reverse_lazy('login')
-
-class UserEditView(generic.UpdateView):
-    form_class = EditProfileForm
-    template_name = 'registration/edit_profile.html'
-    success_url = reverse_lazy('home')
-
-    def get_object(self):
-        return self.request.user
