@@ -3,12 +3,9 @@ from .models import Post, Comment, Category, Profile
 from django_summernote.admin import SummernoteModelAdmin
 
 
-# Register your models here.
-
-#admin.site.register(Comment)
 admin.site.register(Category)
 admin.site.register(Profile)
-#@admin.register(Post, PostAdmin)
+
 
 class PostAdmin(SummernoteModelAdmin):
 

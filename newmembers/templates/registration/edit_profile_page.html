@@ -2,7 +2,8 @@
 {% block title %}Edit Profile Page {% endblock %}
 {% block content %}
 
- 
+
+<!--This is the script to populate information for updating the profile-->
 {% if user.is_authenticated %}
     {% if user.id == profile.user.id %}
         <h1>Edit Profile Page..</h1>

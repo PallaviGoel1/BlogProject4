@@ -8,6 +8,7 @@ from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.core.exceptions import ObjectDoesNotExist
 
 
 class Category(models.Model):
@@ -22,7 +23,7 @@ class Category(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, null= True, on_delete= models.CASCADE)
+    user = models.OneToOneField(User, null=True, on_delete= models.CASCADE)
     bio = models.TextField()
     profile_pic = models.ImageField(null=True, blank=True, upload_to="images/profile/" )
     website_url = models.CharField(max_length=255, null=True, blank=True)
@@ -32,9 +33,7 @@ class Profile(models.Model):
     instagram_url = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return  str(self.user)
-       # return self.user.username
-
+       return  str(self.user)
 
     def get_absolute_url(self):
         return reverse("home")

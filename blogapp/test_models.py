@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
+# Code to test models.py
 class testModels(TestCase):
 
         def test_status_draft(self):

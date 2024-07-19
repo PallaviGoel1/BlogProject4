@@ -3,6 +3,7 @@
 {% block content %}
 
 
+<!--This is the script to populate information for Editing a Blog-->
 <div class="container-fluid" style="width: 90vw;">
     <h1 style="width: fit-content">UpdateBlog</h1>
 {% if user.is_authenticated %}
@@ -14,16 +15,17 @@
                 {{ form.media }}
                 {{ form.as_p }}
                 <button class="btn btn-primary float-end btn-primary-spacing" type="submit">Update Blog</button>
+                <br><br><br>
             </form>
         </div>
-        <br><br><br><br>
+        <br><br>
     {% else %}
-        You're not login 'sorry' (you know it...)
+        You're not logged in 'sorry' (you know it...)
         <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
     {% endif %}
 
 {% else %}
-    You're not login 'sorry'( you know it...)
+    You're not logged in 'sorry' (you know it...)
     <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
 {% endif %}
 </div>

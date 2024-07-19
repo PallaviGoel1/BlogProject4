@@ -2,6 +2,7 @@
 {% block content %}
 
 
+<!--This is the script to populate information at home page-->
 <div class="container-fluid">
     <div class="row">
         <!-- Blog Entries Column -->
@@ -21,7 +22,9 @@
                             
                             {% if user.is_authenticated %}
                                 {% if user.id == post.author.id %}
+                                    <!--
                                     <h6 class="card-title">User Id = {{post.author.id}}</h6>
+                                    -->
                                     <p class="card-text">
                                         <a href="{% url 'update_post' post.pk %} ">(Edit)</a>
                                         <a href="{% url 'delete_post' post.pk %} ">(Delete)</a>

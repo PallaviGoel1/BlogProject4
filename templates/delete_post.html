@@ -2,7 +2,8 @@
 {% block title %}DeleteBlog {% endblock %}
 {% block content %}
 
- 
+
+<!--This is the script to populate information for deleting a Blog-->
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
         <h1>Delete Post...</h1>

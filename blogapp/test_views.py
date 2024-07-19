@@ -2,6 +2,7 @@ from django.test import TestCase
 from .views import LikeView
 
 
+# Code to test views.py
 class TestLikeView(TestCase):
 
     def Post_gets_added_with_ID(self):

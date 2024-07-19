@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 
+
+<!--This is the script to populate profile information of the user-->
 <h1>User Profile..</h1><br>
 
 <div class="card mb-3">
@@ -35,7 +37,7 @@
                            | <a href =" {{page_user.instagram_url}}">Instagram </a>
                         {% endif %}
                     </p>
-                    <p class="card-text">{{ page_user.user.bio }}</p>
+                    <p class="card-text"><strong>{{ page_user.user.bio }}</strong></p>
                 </div>
             </div> 
     </div>

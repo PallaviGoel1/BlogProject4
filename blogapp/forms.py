@@ -9,6 +9,7 @@ choice_list = []
 for item in choices:
     choice_list.append(item)
 
+# Code to get information to add a blog
 class PostForm(forms.ModelForm):
 
     class Meta:
@@ -23,7 +24,7 @@ class PostForm(forms.ModelForm):
             'snippet' : forms.Textarea(attrs={'class': 'form-control'}),
         }
 
-
+# Code to get information to update a blog
 class EditForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -35,6 +36,7 @@ class EditForm(forms.ModelForm):
             'content' : SummernoteWidget(attrs={'summernote':{'width': '100%'}}),
         }
 
+# Code to get information to add a comment
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment

@@ -98,22 +98,36 @@ All the code part of following files has been validated through the official W3C
 
 **list of html and css pages**
 
-### Functional Tests
+### Manual Tests (Functioanl, GUI and UAT)
 
-Functional tests performed for this app are as follows:
-1. Navigation links are functioning
-2. Posts are getting saved in database successfully
-3. Information related to Blog is being populated correctly
-4. Admin and non-admin logins are working as per authorization level defined
-5. Different social media links are functioning
+Tests performed for this app are as follows:
 
-### GUI Tests
 
-GUI tests performed for this app are as follows:
-1. Text on all the pages is properly readable
-2. All the images on different pages are correctly visible
-3. Colour contrast on the pages is not weird
-4. As a user, all information is readable 
+|ID|Test Case|Expected Result|Initial Status|Final Status|Defects|
+|---------|---------|---------|---------|---------|---------|
+|TC.01|Validate home page is loaded correctly when website is loaded|'Navigation bar is visible, Images are placed properly, Blogs can be viewed by scrolling on page, Social media links are visible|Pass|Pass||
+|TC.02|Verify Blog list view at home page|There are 6 tiles of blogs visibe with Blog Title, Creation Date, Author, content and number of likes are visible for each blog|Fail|Pass|BUG.01|
+|TC.03|Verify Paging is working|Next set of 6 Blogs is visible when clicked on Next|Pass|Pass||
+|TC.04|Verify Blog detail view|Following information should be visible - Blog Title, Blog Category, Blog Author, Creation Date, Blog Content, Number of Likes, Autor's Profile, Comments|Fail|Pass|BUG.02, BUG.07|
+|TC.05|Verify Category view|List of available categories should be displayed when clicked on category link from navigation bar|Fail|Pass|BUG.04|
+|TC.06|Verify Blog view by category|All the blogs added for that category should be listed and user should be able to click on blog to get the Blog detail view|Fail|Pass|BUG.03, BUG.10|
+|TC.07|Verify Registration page|A form with the list required information for registration should be displayed once user clicks Register navigation link|Pass|Pass||
+|TC.08|Verify Registration|User should get registered once he/she filled the form with correct information and clicked on Register button|Pass|Pass||
+|TC.09|Validate errors on Registration process|Correct error message should be populated to user in case of Duplicate username is entered|Pass|Pass||
+|TC.10|Verify Login page|A form with the list required information for login should be displayed once user clicks Login navigation link|Pass|Pass||
+|TC.11|Verify Login|User should be able to login once correct inforamtion is entered|Fail|Pass|BUG.05|
+|TC.12|Validate errors on Login process|Correct error message should be populated to user in case of Username don't exists OR Password is wrong|Fail|In Progress|BUG.06|
+|TC.13|Validate comments without login|Anyone should be able to add comment on a post|Pass|Pass||
+|TC.14|Verify creation of a blog|A user should be able to add a blog with all the required detail|Pass|Pass||
+|TC.15|Validate editing a blog without login|Users should not have possibility to Edit or Delete the Blog without logging in|Pass|Pass||
+|TC.16|Validate editing a blog with different login|Users should not have possibility to Edit or Delete the Blog from another author|Pass|Pass||
+|TC.17|Validate editing a blog by author|Author should be able to edit his/her blog|Fail|Pass|BUG.08|
+|TC.18|Validate deleting a blog by author|Author should be able to delete his/her blog|Pass|Pass||
+|TC.19|Verify Create Profie|User should be able to create profile|Pass|Pass||
+|TC.20|View Profile|Profile should be visible post creation|Fail|Fail|BUG.09|
+|TC.21|Edit Profile|User should be able to eit profile|Pass|Pass||
+
+
 
 ### Lighthouse Test
 
@@ -123,7 +137,23 @@ Lighthouse application test results are here for this app
 
 ### Bugs
 
-During development, I came across various issues and managed to fix them all by the end of project.
+During development, I came across various issues and those can be found with latest status along with fixing comments as follows:
+
+|ID|Summary|TestCase ID|Status|Resolution|
+|----------|-------------------|----------|----------|--------------------|
+|BUG.01|There is no paging available|TC.02|Fixed|Add paging code to the homepage.html|
+|BUG.02|Blog Category is not visible in Blog Detail view|TC.04|Fixed|Add category information to post_detail.html|
+|BUG.03|Text is wrong when no blog is available for category|TC.06|Fixed|Updated the message in categories.html|
+|BUG.04|Category link is not working|TC.05|Fixed|Corrected te models.py and views.py with correct objects|
+|BUG.05|Empty text boxes are displayed without any information as what to enter|TC.11|Fixed|Added respective text to the page at login.html|
+|BUG.06|No error message displayed when entered wrong credentials|TC.12|||
+|BUG.07|Current user id is displayed instead of name|TC.04|Fixed|Removed respective code from the script|
+|BUG.08|Update button is not visible correctly when editing a blog|TC.17|Fixed|Added a new line post button|
+|BUG.09|Profile is not visible even after creating successfully|TC.20|Not Fixed|Couldn't fix this even after taking support from technical team|
+|BUG.10|User is able to edit or delete blogs from another user at this page|TC.06|Fixed|Added condition to check if author and user are same|
+
+
+
 
 ## Credits
 
