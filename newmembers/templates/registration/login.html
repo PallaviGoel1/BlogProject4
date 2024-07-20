@@ -5,39 +5,24 @@
 
 <!--This is the script to populate Login information to user-->
 <h1>Login..</h1>
-<div class="form-control">
+		<div class="form-control">
     <form method="POST">
         {% csrf_token %}
         <div class="form-group">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username here..." required>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Username here..."  required>
-            <br>
-            <div class="container bg-light">
-                <div class="col-md-12 text-center">
-                    <button class="btn btn-secondary" text-align="text-center">Login</button>
-                </div>
-            </div>
-            <div id="emailHelp" class="form-text">Not Registered? Sign Up.... 
-                <a href="{% url 'register' %}">here</a> </div>
+            <input type="text" class="form-control" name="username" placeholder="Enter Username here...">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Enter Password here...">
+        </div>
+        <br/>
+        <div class="container bg-light">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-secondary" text-align="text-center">Login</button>
             </div>
         </div>
+        <div id="emailHelp" class="form-text">Not Registered? Sign Up.... <a href="{% url 'register' %}">here</a> </div>
+    </div>
     </form>
-    <br><br><br><br><br><br>
+    <br><br><br><br>
 </div>
-
-<script type="text/javascript">
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // prevent default form submission behavior
-
-        // validate username and password
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        if (username === 'myusername' && password === 'mypassword') {
-            alert('Login successful!');
-        } else {
-            alert('Username or password incorrect. Please try again.');
-        }
-    });
-</script>
 {% endblock %}
