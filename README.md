@@ -1,7 +1,7 @@
 ## BLOG App 
 ![Blog logo](static/images/favicon.ico)
 
-There are many among us who love to read and write blogs. A blog (or weblog) is an information, a person wants to share, on any topic which is expressed and explained by that person in his/her own words. This app is to provide a platform that can be used as blogs repository. There is possibility to read blogs, written by other persons as well. 
+There are many among us who love to read and write blogs. A blog (or weblog) is an information, a person wants to share, on any topic which is expressed and explained by that person in his/her own words. This app is to provide a platform that can be used as blogs repository. As a user you can add as many blogs and as well on a number of different topics. Also, to make it more interesting, user can add images to their blog. There is possibility to read blogs, written by other persons as well. Also users have possibility to fetch list of blogs based on a specific category which can be selected from a list of many categories. 
 
 ## Features
 
@@ -37,11 +37,17 @@ Once clicked on a blog, user can read the blog, can record reaction on the blog,
 
 ![Blogscreen_image](media/blogscreen.png)
 
-## Add category Screen
+## Edit Blog Screen
 
-There is a possibility to add category for the blog content via add category page
+AAAOnce clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
 
-![Addcategory_image](media/addcategorypage.png)
+![Blogscreen_image](media/blogscreen.png)
+
+## Add Comment Screen
+
+AAAOnce clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
+
+![Blogscreen_image](media/blogscreen.png)
 
 ## Category list Screen
 
@@ -49,44 +55,41 @@ On this page, existing list of categories will be displayed
 
 ![Categorylist_image](media/categoriespage.png)
 
-## Future Roadmap
+## Blogs list for selected Category
 
-Though the app is complete and functioning smoothly, there are still few improvement/enhancements can be added later. Few of them are:
-1. More can be added to the blog, for example, entered date, validity, detailed category, etc
-2. More information of the users can be gathered
-3. Users can be notified when there is any like, comment or edit on their blog
-4. Historical records can be displayed
-5. Authentication on publications of blog can be included to restrict publication of inappropriate content
+AAAOn this page, existing list of categories will be displayed
 
-## Technologies Used
+![Categorylist_image](media/categoriespage.png)
 
-Following tools and technologies are used for this project:
-Language: Python, CSS, HTML
-Version Control: GitHub
-Coding/Debugging: Gitpod
-Deployment: Heroku
-Framework: Django
+## Create Profile Screen
 
-### Deployment
+AAAOn this page, existing list of categories will be displayed
 
-Deployment of this project is done via Heroku. Steps followed are as follows:
-1. Ensure that latest code changes are pushed to GitHub repository
-2. Login to Heroku
-3. Click on “Create New App”
-4. Choose a unique name for the app and the region
-5. Add build packs- Python and Nodejs (**Update this section**)
-6. Go to 'Deploy' tab
-7. Select GitHub as deployment method
-8. Click connect
-9. Enter GitHub repository name and search
-10. Click connect
-11. Click on deploy branch
-12. Click on view app
-13. App opened in new screen (**(https://miniblog23-f66148cb72c8.herokuapp.com/)**)
+![Categorylist_image](media/categoriespage.png)
+
+## View Profile Screen
+
+AAAOn this page, existing list of categories will be displayed
+
+![Categorylist_image](media/categoriespage.png)
+
+## Edit Profile Screen
+
+AAAOn this page, existing list of categories will be displayed
+
+![Categorylist_image](media/categoriespage.png)
+
+## Edit User Setting Screen
+
+AAAOn this page, existing list of categories will be displayed
+
+![Categorylist_image](media/categoriespage.png)
 
 ### Planning
 
 For the planning of this project, Agile methodology is used. Entire project work was divided in small stories such as project can be developed, tested and presented at the end of each story. A story was moved through the workflow according to respective development was being performed. By the end of project, all the storied are moved to done.
+
+## Wireframe
 
 ## Quality Checks
 
@@ -116,7 +119,7 @@ Tests performed for this app are as follows:
 |TC.09|Validate errors on Registration process|Correct error message should be populated to user in case of Duplicate username is entered|Pass|Pass||
 |TC.10|Verify Login page|A form with the list required information for login should be displayed once user clicks Login navigation link|Pass|Pass||
 |TC.11|Verify Login|User should be able to login once correct inforamtion is entered|Fail|Pass|BUG.05|
-|TC.12|Validate errors on Login process|Correct error message should be populated to user in case of Username don't exists OR Password is wrong|Fail|In Progress|BUG.06|
+|TC.12|Validate errors on Login process|Correct error message should be populated to user in case of Username don't exists OR Password is wrong|Fail|Pass|BUG.06|
 |TC.13|Validate comments without login|Anyone should be able to add comment on a post|Pass|Pass||
 |TC.14|Verify creation of a blog|A user should be able to add a blog with all the required detail|Pass|Pass||
 |TC.15|Validate editing a blog without login|Users should not have possibility to Edit or Delete the Blog without logging in|Pass|Pass||
@@ -126,7 +129,6 @@ Tests performed for this app are as follows:
 |TC.19|Verify Create Profie|User should be able to create profile|Pass|Pass||
 |TC.20|View Profile|Profile should be visible post creation|Fail|Fail|BUG.09|
 |TC.21|Edit Profile|User should be able to eit profile|Pass|Pass||
-
 
 
 ### Lighthouse Test
@@ -146,14 +148,43 @@ During development, I came across various issues and those can be found with lat
 |BUG.03|Text is wrong when no blog is available for category|TC.06|Fixed|Updated the message in categories.html|
 |BUG.04|Category link is not working|TC.05|Fixed|Corrected te models.py and views.py with correct objects|
 |BUG.05|Empty text boxes are displayed without any information as what to enter|TC.11|Fixed|Added respective text to the page at login.html|
-|BUG.06|No error message displayed when entered wrong credentials|TC.12|||
+|BUG.06|No error message displayed when entered wrong credentials|TC.12|NOt Fixed|Couldn't fix this even after taking support from technical team|
 |BUG.07|Current user id is displayed instead of name|TC.04|Fixed|Removed respective code from the script|
 |BUG.08|Update button is not visible correctly when editing a blog|TC.17|Fixed|Added a new line post button|
 |BUG.09|Profile is not visible even after creating successfully|TC.20|Not Fixed|Couldn't fix this even after taking support from technical team|
 |BUG.10|User is able to edit or delete blogs from another user at this page|TC.06|Fixed|Added condition to check if author and user are same|
 
+## Future Roadmap
 
+Though the app is complete and functioning smoothly, there are still few improvement/enhancements can be added later. Few of them are:
+1. Users can be notified when there is any like, comment or edit on their blog
+2. Authentication on publications of blog can be included to restrict publication of inappropriate content
 
+## Technologies Used
+
+Following tools and technologies are used for this project:
+Language: Python, CSS, HTML
+Version Control: GitHub
+Coding/Debugging: Gitpod
+Deployment: Heroku
+Framework: Django
+
+### Deployment
+
+Deployment of this project is done via Heroku. Steps followed are as follows:
+1. Ensure that latest code changes are pushed to GitHub repository
+2. Login to Heroku
+3. Click on “Create New App”
+4. Choose a unique name for the app and the region
+5. Add build packs- Python and Nodejs (**Update this section**)
+6. Go to 'Deploy' tab
+7. Select GitHub as deployment method
+8. Click connect
+9. Enter GitHub repository name and search
+10. Click connect
+11. Click on deploy branch
+12. Click on view app
+13. App opened in new screen (**(https://miniblog23-f66148cb72c8.herokuapp.com/)**)
 
 ## Credits
 

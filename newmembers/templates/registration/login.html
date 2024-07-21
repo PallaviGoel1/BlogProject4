@@ -4,25 +4,36 @@
 
 
 <!--This is the script to populate Login information to user-->
+<br>
 <h1>Login..</h1>
-		<div class="form-control">
+<div class="form-control" style="width: 80vw;">
     <form method="POST">
         {% csrf_token %}
+        
         <div class="form-group">
             <input type="text" class="form-control" name="username" placeholder="Enter Username here...">
         </div>
+            
         <div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Enter Password here...">
         </div>
-        <br/>
-        <div class="container bg-light">
+        <br>
+            
+        <div class="container bg-light" style="width: 60vw;">
             <div class="col-md-12 text-center">
-                <button class="btn btn-secondary" text-align="text-center">Login</button>
+                <button class="btn btn-secondary">Login</button>
             </div>
         </div>
-        <div id="emailHelp" class="form-text">Not Registered? Sign Up.... <a href="{% url 'register' %}">here</a> </div>
-    </div>
+        
+        <br>
+        <div id="emailHelp" class="form-text">Not Registered? Sign Up.... <a href="{% url 'register' %}">here</a> 
+        </div>
     </form>
-    <br><br><br><br>
+    <br>
 </div>
+<br>
+<br>
+<br>
+<br>
+
 {% endblock %}
