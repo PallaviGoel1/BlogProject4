@@ -19,7 +19,8 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ page_user.user.first_name }}
-                        {{ page_user.user.last_name}}</h5>
+                        {{ page_user.user.last_name}}
+                    </h5>
                     <p class="small text-muted">
                         {% if page_user.website_url %}
                            | <a href =" {{page_user.website_url}}">Website </a> 
@@ -37,8 +38,9 @@
                            | <a href =" {{page_user.instagram_url}}">Instagram </a>
                         {% endif %}
                     </p>
-                    <p class="card-text"><strong>{{ page_user.user.bio }}</strong></p>
                 </div>
+                <p class="card-text">{{ page_user.bio }}</p>
+                <br>                    
             </div> 
     </div>
 </div>

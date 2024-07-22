@@ -3,6 +3,8 @@
 
 There are many among us who love to read and write blogs. A blog (or weblog) is an information, a person wants to share, on any topic which is expressed and explained by that person in his/her own words. This app is to provide a platform that can be used as blogs repository. As a user you can add as many blogs and as well on a number of different topics. Also, to make it more interesting, user can add images to their blog. There is possibility to read blogs, written by other persons as well. Also users have possibility to fetch list of blogs based on a specific category which can be selected from a list of many categories. 
 
+![Responsive_image](media/resposive.png)
+
 ## Features
 
 This app is to provide an easy way to create, maintain, share and read blogs written by users around the world. All you need is to create a user on the app in simple 2 steps and start blogging. At start, of course there wouldn't be much and I am working on to get links for the already existing blogs by different users on another webs.
@@ -34,7 +36,7 @@ User can add a blog on this webside and can as well select the Slug and Snippet 
 ![AddBlog_page_image2](media/addblog2.png)
 ![AddBlog_page_image3](media/addblog3.png)
 
-## Blog Screen
+## Blog View Screen
 
 Once clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
 
@@ -47,11 +49,17 @@ Users have possiblity to edit their blog as well as a author of the blog
 
 ![BlogEditscreen_image](media/EditBlog.png)
 
+## Comment View Screen
+
+As a user, you can read comments on any of the blog added by any user on this website.
+
+![Comment_image](media/comment.png)
+
 ## Add Comment Screen
 
-As a valid user, there is possibility to add comment to any of the blog avaiable on this website.
+As a user, there is possibility to add comment to any of the blog avaiable on this website.
 
-![AddComment_image](media/comment.png)
+![AddComment_image](media/addcomment.png)
 
 ## Category list Screen
 
@@ -74,9 +82,11 @@ Registered users can create a profile here which will than be published on their
 
 ## View Profile Screen
 
-User can see their profile on this page
+User's profile can be seen at their profile page as well on the blog added by that user
 
-![ViewProfile_image](media/Profilepage.png)
+![ViewProfile_image](media/viewprofile1.png)
+
+![ViewProfile_image](media/viewprofile2.png)
 
 ## Edit Profile Screen
 
