@@ -9,7 +9,7 @@
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
   
-        <div class="form-group" style="width: 100%;">
+        <div class="form-group" style="width: 80vw;">
             <form method="POST">
                 {% csrf_token %}
                 {{ form.media }}

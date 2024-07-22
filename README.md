@@ -11,13 +11,14 @@ This app is to provide an easy way to create, maintain, share and read blogs wri
 
 This is the very first screen that will be visible to the users once app is launched. on this page, there is a menu bar with option to login or register and list of existing blogs.
 
-![Home_page_image](media/homepage.png)
+![Home_page_image](media/homepage1.png)
 
 ## Registration Screen
 
-User will need to enter a username and select a password for this:
+User can register himself/herself to the website so the he/she can add blogs or can comment on existing blogs. In order to resigter, user will need to enter a username and select a password along with few other details:
 
-![registration_page_image](media/registerpage.png)
+![registration_page_image1](media/register.png)
+![registration_page_image2](media/register2.png)
 
 ## Login Screen
 
@@ -27,69 +28,79 @@ An existing user can enter user id and password to login here:
 
 ## Add Blog Screen
 
-There are few details needed to enter here for the user to add a blog. 
+User can add a blog on this webside and can as well select the Slug and Snippet as well for their blod
 
-![AddBlog_page_image](media/addblog.png)
+![AddBlog_page_image1](media/addbolg1.png)
+![AddBlog_page_image2](media/addblog2.png)
+![AddBlog_page_image3](media/addblog3.png)
 
 ## Blog Screen
 
 Once clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
 
-![Blogscreen_image](media/blogscreen.png)
+![Blogscreen_image1](media/postdetails1.png)
+![Blogscreen_image2](media/postdetails2.png)
 
 ## Edit Blog Screen
 
-AAAOnce clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
+Users have possiblity to edit their blog as well as a author of the blog
 
-![Blogscreen_image](media/blogscreen.png)
+![BlogEditscreen_image](media/EditBlog.png)
 
 ## Add Comment Screen
 
-AAAOnce clicked on a blog, user can read the blog, can record reaction on the blog, also can leave a comment here.
+As a valid user, there is possibility to add comment to any of the blog avaiable on this website.
 
-![Blogscreen_image](media/blogscreen.png)
+![AddComment_image](media/comment.png)
 
 ## Category list Screen
 
 On this page, existing list of categories will be displayed
 
-![Categorylist_image](media/categoriespage.png)
+![Categorylist_image](media/category.png)
 
 ## Blogs list for selected Category
 
-AAAOn this page, existing list of categories will be displayed
+All available blogs for a specific category can be listed just by clicking the category
 
-![Categorylist_image](media/categoriespage.png)
+![CategoryItems_image](media/categoryitem.png)
 
 ## Create Profile Screen
 
-AAAOn this page, existing list of categories will be displayed
+Registered users can create a profile here which will than be published on their blogs
 
-![Categorylist_image](media/categoriespage.png)
+![CreateProfile_image1](media/createprofilepage1.png)
+![CreateProfile_image2](media/createprofilepage2.png)
 
 ## View Profile Screen
 
-AAAOn this page, existing list of categories will be displayed
+User can see their profile on this page
 
-![Categorylist_image](media/categoriespage.png)
+![ViewProfile_image](media/Profilepage.png)
 
 ## Edit Profile Screen
 
-AAAOn this page, existing list of categories will be displayed
+User can edit their profile on this page
 
-![Categorylist_image](media/categoriespage.png)
+![EditPofile_image1](media/editprofilepage1.png)
+![EditPofile_image2](media/editprofilepage2.png)
 
 ## Edit User Setting Screen
 
-AAAOn this page, existing list of categories will be displayed
+User can edit their user setting on this page
 
-![Categorylist_image](media/categoriespage.png)
+![UserSetting_image1](media/editsetting1.png)
+![UserSetting_image2](media/editsetting2.png)
 
 ### Planning
 
 For the planning of this project, Agile methodology is used. Entire project work was divided in small stories such as project can be developed, tested and presented at the end of each story. A story was moved through the workflow according to respective development was being performed. By the end of project, all the storied are moved to done.
 
 ## Wireframe
+
+Flow of the website is as follows:
+
+![WireFrame_image](media/wireframe.png)
 
 ## Quality Checks
 
@@ -98,8 +109,6 @@ Most of the testing is performed manually at various steps of development and re
 ### Validator Tests
 
 All the code part of following files has been validated through the official W3C validator official Jigsaw validator
-
-**list of html and css pages**
 
 ### Manual Tests (Functioanl, GUI and UAT)
 
